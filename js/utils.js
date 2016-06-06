@@ -4,13 +4,13 @@ function removeItem(data, key){
 }
 
 function removeItemFromItems(element) {
-    var data = loadData();
+    //var data = loadData();
     var key = $(element).attr('key');
     removeItem(data, key);
 }
 
 function updateData(element){
-    var data = loadData();
+    //var data = loadData();
     var value = $(element).val();
     var key = $(element).attr('key');
 

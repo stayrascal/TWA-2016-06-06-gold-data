@@ -6,8 +6,8 @@ function addComponent(data) {
     $('#myModal').modal('toggle');
 }
 
+var data = loadData();
 $(function () {
-    var data = loadData();
     render(data);
 
     $('#add-component').click(function () {
