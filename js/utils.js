@@ -1,6 +1,6 @@
 function removeItem(data, key){
     data.items = data.items.filter(element => element.key != key);
-    render(data);
+    Render.render(data);
 }
 
 function removeItemFromItems(element) {
@@ -20,7 +20,7 @@ function updateData(element){
         }
         return item;
     });
-    render(data);
+    Render.render(data);
 }
 
 function showEditPage(){
