@@ -6,37 +6,17 @@ function render(data){
 function renderBox(data, clsName){
     var componentBox = $(clsName);
     componentBox.empty();
-    data.items.forEach(function (item) {
-        if (clsName.includes('edit')){
-            componentBox.append(buildEditableComponent(item));
-        }else{
-            componentBox.append(buildPreviewComponent(item));
-        }
-    });
+    if (clsName.includes('edit')){
+        componentBox.append(buildEditableComponent(data));
+    }else{
+        componentBox.append(buildPreviewComponent(data));
+    }
 }
 
-function buildEditableComponent(item) {
-    var componment = $(`<div class="col-md-7 text-center">
-                                <input type="${item.type}" class="input-sm" value="${item.value}"/>
-                                <button class="left btn-sm">Remove</button>
-                            </div>`);
-
-    componment.find('button').click(function () {
-        remoteItem(item);
-        render(data);
-    });
-
-    componment.find('input').change(function () {
-        item.value = this.value.trim();
-        render(data);
-    });
-
-    return componment;
+function buildEditableComponent(data) {
+    return new EJS({url: 'template/editableItem.ejs'}).render({data:data});
 }
 
-function buildPreviewComponent(item){
-    var componment = $(`<div class="col-md-7">
-                                <label class="list-inline">${item.type}:<span>${item.value}</span></label>
-                           </div>`);
-    return componment;
+function buildPreviewComponent(data){
+    return new EJS({url: 'template/previewItem.ejs'}).render({data:data});
 }

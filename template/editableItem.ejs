@@ -1,0 +1,10 @@
+<%data.items.forEach(item => { %>
+    <div class="col-md-7 text-center">
+        <input type="hidden" name="item" value="<%=item%>"/>
+        <input type="<%=item.type%>" class="input-sm" value="<%=item.value%>" item="<%=item%>" key="<%=item.key%>" onchange="updateData(this)"/>
+        <input type="hidden" name="data" value="<%= data %>"/>
+        <button class="left btn-sm" onclick="removeItemFromItems(this)"  data="<%=data%>" item="<%=item%>" key="<%=item.key%>">Remove</button>
+    </div>
+<%})%>
+
+
