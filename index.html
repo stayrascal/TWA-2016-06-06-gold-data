@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!--<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">-->
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="modal fade" role="dialog" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" aria-hidden="true">x
+                </button>
+                <h4 class="modal-title">Please choose which component you want to add</h4>
+            </div>
+            <div class="modal-body">
+                <label class="radio-inline">
+                    <input type="radio" name="component-type" value="date" checked="checked"/>DatePicker
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="component-type" value="text"/>Text
+                </label>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="add-component">Choose</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <button type="button" class="btn btn-lg btn-block edit">Edit
+            </button>
+        </div>
+        <div class="col-md-6">
+            <button type="button" class="btn btn-lg btn-block preview" data-toggle="modal">Preview
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="container edit-page">
+    <div class="alert-info">
+        <button type="button" class="btn btn-info btn-lg btn-block add-component" data-toggle="modal"
+                data-target="#myModal">Add
+        </button>
+    </div>
+    <div class="row box">
+    </div>
+</div>
+
+<div class="container preview-page hidden">
+    <div class="row box">
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/features.js"></script>
+<script src="js/render.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>
